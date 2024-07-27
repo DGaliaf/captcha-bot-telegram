@@ -1,0 +1,17 @@
+button_text = "I'm not a robot!"
+
+welcome_message = "Hello! This is the spam protection system. Please press the button within 30 seconds or you will be banned!"
+after_success_message = "User passed the validation."
+after_fail_message = "User didn't pass the validation and was banned."
+
+# Show success and failure messages or delete them. Pick "show" or "del"
+print_success_and_fail_messages_strategy = "show"
+
+welcome_timeout = "30"
+ban_duration = "forever"
+
+use_socks5_proxy = "no"
+socks5_address = "1.1.1.1"
+socks5_port = "1080"
+socks5_login = "login"
+socks5_password = "password"
