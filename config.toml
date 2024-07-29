@@ -1,3 +1,5 @@
+bot_token = "7046967974:AAEQ3YCCi8GpBSy0Ph1qxmVp7bMsJxg5vbI"
+
 button_text = "I'm not a robot!"
 
 welcome_message = "Hello! This is the spam protection system. Please press the button within 30 seconds or you will be banned!"

@@ -12,12 +12,11 @@ import (
 
 type Bot struct {
 	cfg         config.Config
-	token       string
 	bot         *tb.Bot
 	passedUsers sync.Map
 }
 
-func NewBot(cfg config.Config, token string) Bot {
+func NewBot(cfg config.Config) Bot {
 	var httpClient *http.Client
 	if cfg.UseSocks5Proxy == "yes" {
 		var err error
@@ -28,7 +27,7 @@ func NewBot(cfg config.Config, token string) Bot {
 	}
 
 	bot, err := tb.NewBot(tb.Settings{
-		Token:  token,
+		Token:  cfg.BotToken,
 		Poller: &tb.LongPoller{Timeout: 10 * time.Second},
 		Client: httpClient,
 	})
@@ -38,7 +37,6 @@ func NewBot(cfg config.Config, token string) Bot {
 
 	return Bot{
 		cfg:         cfg,
-		token:       token,
 		bot:         bot,
 		passedUsers: sync.Map{},
 	}
